@@ -1,6 +1,6 @@
 <Mod
-	name="Custom Always Cast"
-	description="Lets the player control the frequency of Always Cast wands and the pool of Always Cast spells"
+	name="[v0.1] Copi's Always Cast"
+	description="Massive credit to InfiniteSunrise's 'Custom Always Cast' Mod!"
 	tags="gameplay,cheats"
 	request_no_api_restrictions="0"
 	dont_upload_folders=".git,git"
