@@ -46,6 +46,7 @@ function ModSettingsGui(gui, in_main_menu)
                     if GameTextGetTranslatedOrNot(action.name):upper():match(query:upper()) then
                         if action.never_ac then
                             GuiImage(gui, new_id(), 0, 0, action.sprite, 0.5, 1, 1)
+                            GuiTooltip(gui, "ID:", action.id)
                             GuiLayoutBeginVertical(gui, 1, 0, false, 0, 10)
                                 GuiColorSetForNextWidget(gui, 1.0, 1.0, 1.0, 0.5)
                                 GuiText(gui, 0, 0, GameTextGetTranslatedOrNot(action.name))
@@ -63,6 +64,7 @@ function ModSettingsGui(gui, in_main_menu)
                                 GuiOptionsAddForNextWidget(gui, 26)
                             end
                             local lmb = GuiImageButton(gui, new_id(), 0, 0, "", action.sprite)
+                            GuiTooltip(gui, "ID:", action.id)
                             if lmb then
                                 ModSettingSetNextValue("copis_ac.state_" .. action.id, not state, false)
                             end
