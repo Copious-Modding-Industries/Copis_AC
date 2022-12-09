@@ -1,0 +1,1 @@
+ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "mods/copis_ac/patch_actions.lua")
