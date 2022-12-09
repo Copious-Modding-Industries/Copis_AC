@@ -1,0 +1,8 @@
+<Mod
+	name="Custom Always Cast"
+	description="Lets the player control the frequency of Always Cast wands and the pool of Always Cast spells"
+	tags="gameplay,cheats"
+	request_no_api_restrictions="0"
+	dont_upload_folders=".git,git"
+> 
+</Mod>

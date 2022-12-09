@@ -1,0 +1,9 @@
+{
+    "Lua.diagnostics.globals": [
+        "mod_settings_gui",
+        "mod_settings_gui_count",
+        "mod_setting_vertical_spacing",
+        "mod_settings",
+        "mod_settings_version"
+    ]
+}
