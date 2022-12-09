@@ -45,8 +45,16 @@ function ModSettingsGui(gui, in_main_menu)
                 GuiLayoutBeginHorizontal(gui, 1, 0, false, 0, 6)
                     if GameTextGetTranslatedOrNot(action.name):upper():match(query:upper()) then
                         if action.never_ac then
-                            GuiOptionsAddForNextWidget(gui, 26)
-                            GuiImage(gui, new_id(), 0, 0, action.sprite, 1, 1, 1)
+                            GuiImage(gui, new_id(), 0, 0, action.sprite, 0.5, 1, 1)
+                            GuiLayoutBeginVertical(gui, 1, 0, false, 0, 10)
+                                GuiColorSetForNextWidget(gui, 1.0, 1.0, 1.0, 0.5)
+                                GuiText(gui, 0, 0, GameTextGetTranslatedOrNot(action.name))
+                                GuiLayoutBeginHorizontal(gui, 0, 0, false, 0, 10)
+                                    GuiImage(gui, new_id(), 0, 9.5, "mods/copis_ac/noac.png", 0.5, 1, 1)
+                                    GuiColorSetForNextWidget(gui, 0.5, 0.5, 1.0, 0.5)
+                                    GuiText(gui, 1, 8, "Spell cannot be an always cast.")
+                                GuiLayoutEnd(gui)
+                            GuiLayoutEnd(gui)
                         else
                             local state = ModSettingGetNextValue("copis_ac.state_" .. action.id)
                             GuiOptionsAddForNextWidget(gui, 28)
