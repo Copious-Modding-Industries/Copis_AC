@@ -35,13 +35,14 @@ function ModSettingsGui(gui, in_main_menu)
     mod_settings_gui(mod_id, mod_settings, gui, in_main_menu)
     id = 432534
     local function new_id() id = id + 1; return id end
-    if true then --not in_main_menu then
+    if not in_main_menu then
         GuiLayoutBeginVertical(gui, mod_setting_group_x_offset, 0, false, 0, 0)
 
             local query = GuiQuery(gui, new_id)
-
+            local height = 0
             dofile_once("data/scripts/gun/gun_actions.lua")
             for index, action in ipairs(actions) do
+                height = height + 4.2
                 GuiLayoutBeginHorizontal(gui, 1, 0, false, 0, 6)
                     if GameTextGetTranslatedOrNot(action.name):upper():match(query:upper()) then
                         if action.never_ac then
@@ -92,6 +93,7 @@ function ModSettingsGui(gui, in_main_menu)
                 GuiLayoutEnd(gui)
             end
         GuiLayoutEnd(gui)
+        GuiLayoutAddVerticalSpacing(gui, height * 5)
     else
         GuiLayoutBeginHorizontal(gui, 0, 0, false, 5, 5)
             GuiImage(gui, new_id(), 0, 0, "data/ui_gfx/inventory/icon_warning.png", 1, 1, 1)
