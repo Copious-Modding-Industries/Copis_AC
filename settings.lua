@@ -35,11 +35,11 @@ function ModSettingsGui(gui, in_main_menu)
     mod_settings_gui(mod_id, mod_settings, gui, in_main_menu)
     id = 432534
     local function new_id() id = id + 1; return id end
-    if not in_main_menu then
+    if true then --not in_main_menu then
         GuiLayoutBeginVertical(gui, mod_setting_group_x_offset, 0, false, 0, 0)
 
             local query = GuiQuery(gui, new_id)
-            local height = 0
+            local height = 4
             dofile_once("data/scripts/gun/gun_actions.lua")
             for index, action in ipairs(actions) do
                 height = height + 4.2
